@@ -1,0 +1,33 @@
+@use 'vars';
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+    // top: 0;
+    // position: fixed;
+    background-color: #fff;
+    width: calc(100% - 48px);
+    background: url('../assets/images/fondo.png'), #7b4397;
+    background: url('../assets/images/fondo.png'), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
+    background: url('../assets/images/fondo.png'), linear-gradient(to left, #7b4397, #dc2430)
+  }
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .navbar-right li {
+    margin-left: 15px;
+    color: var(--white);
+    font-weight: bold;
+  }

@@ -1,0 +1,15 @@
+$base-color: #f7f7f7;
+$color: rgba(#000, 0.88);
+
+// @font-face {
+//     font-family: 'Ubuntu';
+//     src: url('@fonts/ubuntu-regular.woff2') format('woff2'),
+//         url('@fonts/ubuntu-regular.woff') format('woff');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+body {
+    margin: 0;
+    font-family: 'Open Sans';
+}
