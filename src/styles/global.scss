@@ -1,15 +1,86 @@
 $base-color: #f7f7f7;
 $color: rgba(#000, 0.88);
 
-// @font-face {
-//     font-family: 'Ubuntu';
-//     src: url('@fonts/ubuntu-regular.woff2') format('woff2'),
-//         url('@fonts/ubuntu-regular.woff') format('woff');
-//     font-weight: 400;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('@fonts/ubuntu-regular.woff2') format('woff2'),
+        url('@fonts/ubuntu-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 body {
     margin: 0;
     font-family: 'Open Sans';
+}
+
+.right { float: right; }
+
+.element {
+    padding: 13px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.element:first-child { border-top: 1px solid var(--very-light-pink); }
+.element:nth-child(even) { background-color: var(--text-input-field); }
+
+.element__description {
+    float: left;
+}
+
+.element__value {
+    float: left;
+    transition: transform 0.3s;
+    color: var(-main-color);
+}
+
+.element__delete {
+    float: left;
+}
+
+.element__delete--btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+}
+
+.element__percentage {
+    float: left;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    font-size: 11px;
+    background-color: #FFDAD9;
+    padding: 3px;
+    border-radius: 3px;
+    width: 45px;
+    text-align: center;
+}
+
+.income .element__value,
+.income .element__delete--btn {
+    color: var(--main-color) ;
+}
+
+.expense .element__value,
+.expense .element__percentage,
+.expense .element__delete--btn {
+    color: var(--ion-color-danger);
+}
+
+.element__delete--btn:focus { outline: none; }
+.element__delete--btn:active { transform: translateY(2px); }
+
+.element:hover .element__delete--btn { display: block; }
+.element:hover .element__value { transform: translateX(-20px); }
+.element:hover .element__percentage { transform: translateX(-20px); }
+
+.clean-styles::after {
+    content: "";
+    display: table;
+    clear: both;
 }

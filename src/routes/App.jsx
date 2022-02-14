@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@containers/Layout";
 import Login from "@pages/Login";
 import Home from "@pages/Home";
+import Register from "@pages/Register";
 import NotFound from "@pages/NotFound";
 import AppContext from "@context/AppContext";
 import useInitialState from "@hooks/useInitialState"; 
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
+            <Route exact path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

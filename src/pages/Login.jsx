@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "/src/firabase.js";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../firabase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import instagram from '@images/instagram.png';
 import '@styles/Login.scss';
@@ -17,14 +17,16 @@ const Login = () => {
         console.log("usuario no encontrado")
         return;
       }
-      if(user) navigate("/home");
+      if(user) {        
+        navigate("/home");
+      }
     }, [user, loading]);
 
   return (
     <div className="Login">
       <div className="Login-container">
         <img src={instagram} alt="logo" className="logo" />
-        <form action="/" className="form" ref={form}>
+        <div className="form" ref={form}>
           <label htmlFor="email" className="label">
             Email address
           </label>
@@ -48,12 +50,13 @@ const Login = () => {
           />
           <button
             className="primary-button login-button"
-            // onClick={() => signInWithEmailAndPassword(email, password)}
+            onClick={() => logInWithEmailAndPassword(email, password)}
           >
             Log in
           </button>
           <a href="/">Forgot my password</a>
-        </form>
+          <a href="/register">Don't you hava an account? </a>
+        </div>
         {/* <button className="secondary-button signup-button">Sign up</button> */}
         <button className="secondary-button signup-button" onClick={signInWithGoogle}>
           Login with Google

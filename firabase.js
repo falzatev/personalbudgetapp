@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, set } from "firebase/database";
 
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
 import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
@@ -77,6 +78,15 @@ const sendPasswordReset = async (email) => {
   }
 };
 
+const saveIncome = (description, value, email, date) => {
+  set(ref(db, 'incomes/'), {
+    description : description,
+    value : value,
+    username: email,
+    date: date
+  });
+}
+
 const logout = () => {
   signOut(auth);
 };
@@ -89,5 +99,6 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logout,
+  saveIncome
 };
   

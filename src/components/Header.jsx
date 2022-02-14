@@ -1,8 +1,16 @@
-import React from 'react';
-import { logout } from '/src/firabase.js';
+import React, { useContext } from 'react';
+import { logout } from '../../firabase.js';
+import AppContext from '@context/AppContext';
 import '@styles/Header.scss';
 
-const Header = ({ email }) => {
+const Header = () => {
+  const { state: { email }, asignEmail} = useContext(AppContext);
+
+  const handleLogout = () => {
+    asignEmail('');
+    logout();
+  }
+
   return ( 
     <nav>
       <div className="navbar-left">
@@ -33,7 +41,7 @@ const Header = ({ email }) => {
             {email}
           </li>
           <li>
-            <a className="logout" onClick={logout}>
+            <a className="logout" onClick={handleLogout}>
               Logout
             </a>
           </li>          

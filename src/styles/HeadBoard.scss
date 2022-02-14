@@ -11,7 +11,7 @@
     position: relative;
     width: 100%;
     padding-top: 100px;
-    color: #fff;
+    color: var(--white);
     background: url('../assets/images/fondo.png'), #7b4397;
     background: url('../assets/images/fondo.png'), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
     background: url('../assets/images/fondo.png'), linear-gradient(to left, #7b4397, #dc2430)
@@ -23,7 +23,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: var(--white);
 }
 
 .budget__title {
@@ -57,7 +57,7 @@
 }
 
 .budget__expense {
-    background-color: #ff4f3f;
+    background-color: var(--ion-color-danger);
 }
 
 .budget__value {

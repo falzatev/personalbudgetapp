@@ -1,0 +1,14 @@
+@use 'vars';
+
+.income {
+    float: left;
+    width: 370px;
+    margin-right: 70px;
+    padding-bottom: 120px;
+}
+
+.income__title { 
+    color: var(--main-color); 
+}
+
+

@@ -1,34 +1,41 @@
 import { useState } from "react";
 
 const initialState = {
-    income: [],
+    incomes: [],
     expenses: [],
-    username: ''
+    email: '',
 }
 
 const useInitialState = () => {
     const [state, setState] = useState(initialState);
 
+    const addIncome = (payload) => {
+        setState({
+            ...state,
+            incomes: [...state.incomes, payload]
+        });
+    }
+
     const addExpense = (payload) => {
         setState({
             ...state,
             expenses: [...state.expenses, payload]
-        })
+        });
     }
 
-    const asignUsername = (username) => {
+    const asignEmail = (email) => {
         setState({
             ...state,
-            username: username
-        })
+            email: email
+        });
     }
 
     return {
         state,
-        addExpense
+        addIncome,
+        addExpense,
+        asignEmail,
     }
 }
-
-
 
 export default useInitialState;
