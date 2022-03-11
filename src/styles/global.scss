@@ -9,9 +9,14 @@ $color: rgba(#000, 0.88);
     font-style: normal;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans';
+    // cursor: url("../assets/images/twitter.png"), auto;
 }
 
 .right { float: right; }

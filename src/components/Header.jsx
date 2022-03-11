@@ -13,15 +13,15 @@ const Header = () => {
 
   return ( 
     <nav>
-      <div className="navbar-left">
-        {/* <ul>
+      <div>
+         {/* <ul>
           <li>
-            <a href="/">All</a>
+            <a href="/home">Home</a>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <a href="/summary">Monthly Summary</a>
           </li>
-          <li>
+         <li>
             <a href="/">Electronics</a>
           </li>
           <li>
@@ -33,7 +33,7 @@ const Header = () => {
           <li>
             <a href="/">Others</a>
           </li>
-        </ul> */}
+        </ul>  */}
       </div>
       <div className="navbar-right">
         <ul>

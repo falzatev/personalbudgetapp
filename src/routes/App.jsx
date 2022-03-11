@@ -7,6 +7,7 @@ import Register from "@pages/Register";
 import NotFound from "@pages/NotFound";
 import AppContext from "@context/AppContext";
 import useInitialState from "@hooks/useInitialState"; 
+import MonthlySummary from "@components/MonthlySummary";
 import "@styles/global.scss";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route exact path="/" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/register" element={<Register />} />
+            <Route exact path="/summary" element={<MonthlySummary />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

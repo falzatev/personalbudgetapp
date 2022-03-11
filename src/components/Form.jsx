@@ -20,46 +20,53 @@ const Form = () => {
     
     e.preventDefault();
     
-    if(description && value) {
-      // const data username= {
-        //   description: dataForm.description,
-        //   value: dataForm.value,
-        //   username: {email}
-        // }
-        
-        // database.ref("income").set({
-          //   description : dataForm.description,
-          //   value : dataForm.value,
-          // }).catch(alert);              
+    if(description && value) {             
           
-          let today = new Date(),
-          date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-          console.log(`current date: ${date}`); 
-          
-          let newData = {
-            date: date,
-            description: description,
-            username: email,
-            value: value
-          }
+      let today = new Date(),
+      date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      
+      let newData = {
+        date: date,
+        description: description,
+        username: email,
+        value: Number(value)
+      }
+      
       if(type === 'income'){
         addIncome({description, value});
-
-        // saveIncome(description, value, email, date);
-
         addNewIncome(newData);        
       } else {
         addNewExpense(newData);
-      }
+      }      
     }
   }
 
   const addNewIncome = async (data) => {
     await addDoc(incomesCollectionRef, data)
+    .then((docRef) => {
+      setDescription('');
+      setValue('');
+      setType('income');
+      alert('Income successfully submited.');
+    })
+    .catch((error) => {
+      console.log('%c Error adding income document', 'background-color: #ff0000;color: #fff;');
+      console.log(error);
+    });
   }
 
   const addNewExpense = async (data) => {
-    await addDoc(expensesCollectionRef, data);
+    await addDoc(expensesCollectionRef, data)
+    .then((docRef) => {
+      setDescription('');
+      setValue('');
+      setType('income');
+      alert('Expense successfully submited.');
+    })
+    .catch((error) => {
+      console.log('%c Error adding expense document', 'background-color: #ff0000; color: #fff;');
+      console.log(error);
+    });
   }
   
   return (      

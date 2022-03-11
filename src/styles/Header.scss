@@ -1,4 +1,4 @@
-@use 'vars';
+@use '_vars';
 
 nav {
     display: flex;
@@ -26,8 +26,28 @@ nav {
     width: 100%;
     cursor: pointer;
   }
+  .navbar-left li,
   .navbar-right li {
     margin-left: 15px;
     color: var(--white);
+    font-weight: bold;
+  }
+  
+  .logout {
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .navbar-left {
+    display: flex;
+  }
+  .navbar-left ul {
+    margin-left: 12px;
+  }
+  .navbar-left ul li a,
+  .navbar-right ul li a {
+    text-decoration: none;
+    color: var(--white);    
     font-weight: bold;
   }
